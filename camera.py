@@ -25,7 +25,6 @@ imagecounter = 0
 imagefolder = 'Photos'
 templatePath = os.path.join('Photos', 'Template', "template.png") #Path of template image
 ImageShowed = False
-Printing = False
 BUTTON_PIN = 4
 #IMAGE_WIDTH = 558
 #IMAGE_HEIGHT = 374
@@ -312,7 +311,6 @@ def TakePictures():
     global ImageShowed
     global CountDownPhoto
     global BackgroundColor
-    global Printing
     global PhotosPerCart
     global TotalImageCount
 
@@ -349,56 +347,14 @@ def TakePictures():
     bgimage2 = bgimage.rotate(90)
     bgimage2.save('/home/pi/Desktop/tempprint.jpg')
     ImageShowed = False
-    Message = "Appuyez sur le bouton pour imprimer"
-    UpdateDisplay()
-    time.sleep(1)
     Message = ""
     UpdateDisplay()
-    Printing = False
-    WaitForPrintingEvent()
     Numeral = ""
     Message = ""
-    print(Printing)
-	Message = ""
-	Numeral = ""
 	ImageShowed = False
 	UpdateDisplay()
 	time.sleep(1)
 
-def MyCallback(channel):
-    global Printing
-    GPIO.remove_event_detect(BUTTON_PIN)
-    Printing=True
-    
-def WaitForPrintingEvent():
-    global BackgroundColor
-    global Numeral
-    global Message
-    global Printing
-    global pygame
-    countDown = 5
-    GPIO.add_event_detect(BUTTON_PIN, GPIO.RISING)
-    GPIO.add_event_callback(BUTTON_PIN, MyCallback)
-    
-    while Printing == False and countDown > 0:
-        if(Printing == True):
-            return
-        for event in pygame.event.get():            
-            if event.type == pygame.KEYDOWN:                
-                if event.key == pygame.K_DOWN:
-                    GPIO.remove_event_detect(BUTTON_PIN)
-                    Printing = True
-                    return        
-        BackgroundColor = ""
-        Numeral = str(countDown)
-        Message = ""
-        UpdateDisplay()        
-        countDown = countDown - 1
-        time.sleep(1)
-
-    GPIO.remove_event_detect(BUTTON_PIN)
-        
-    
 def WaitForEvent():
     global pygame
     NotEvent = True
