@@ -351,9 +351,9 @@ def TakePictures():
     UpdateDisplay()
     Numeral = ""
     Message = ""
-	ImageShowed = False
-	UpdateDisplay()
-	time.sleep(1)
+    ImageShowed = False
+    UpdateDisplay()
+    time.sleep(1)
 
 def WaitForEvent():
     global pygame
