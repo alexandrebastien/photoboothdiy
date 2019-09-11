@@ -3,7 +3,6 @@ import pygame
 import time
 import os
 import PIL.Image
-import cups
 import RPi.GPIO as GPIO
 
 from threading import Thread
