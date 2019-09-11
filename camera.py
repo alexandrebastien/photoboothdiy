@@ -146,19 +146,19 @@ def DisplayText(fontSize, textToDisplay):
     global CountDownPhoto
 
     if (BackgroundColor != ""):
-		#print(BackgroundColor)
-		background.fill(pygame.Color("black"))
+        #print(BackgroundColor)
+        background.fill(pygame.Color("black"))
     if (textToDisplay != ""):
-		#print(displaytext)
-		font = pygame.font.Font(None, fontSize)
-		text = font.render(textToDisplay, 1, (227, 157, 200))
-		textpos = text.get_rect()
-		textpos.centerx = background.get_rect().centerx
-		textpos.centery = background.get_rect().centery
-		if(ImageShowed):
-			backgroundPicture.blit(text, textpos)
-		else:
-			background.blit(text, textpos)
+        #print(displaytext)
+        font = pygame.font.Font(None, fontSize)
+        text = font.render(textToDisplay, 1, (227, 157, 200))
+        textpos = text.get_rect()
+        textpos.centerx = background.get_rect().centerx
+        textpos.centery = background.get_rect().centery
+        if(ImageShowed):
+            backgroundPicture.blit(text, textpos)
+        else:
+            background.blit(text, textpos)
 
 def UpdateDisplay():
     # init global variables from main thread
@@ -178,43 +178,43 @@ def UpdateDisplay():
     #DisplayText(500, CountDownPhoto)
 
     if (BackgroundColor != ""):
-		#print(BackgroundColor)
-		background.fill(pygame.Color("black"))
+        #print(BackgroundColor)
+        background.fill(pygame.Color("black"))
     if (Message != ""):
-		#print(displaytext)
-		font = pygame.font.Font(None, 100)
-		text = font.render(Message, 1, (227, 157, 200))
-		textpos = text.get_rect()
-		textpos.centerx = background.get_rect().centerx
-		textpos.centery = background.get_rect().centery
-		if(ImageShowed):
-			backgroundPicture.blit(text, textpos)
-		else:
-			background.blit(text, textpos)
+        #print(displaytext)
+        font = pygame.font.Font(None, 100)
+        text = font.render(Message, 1, (227, 157, 200))
+        textpos = text.get_rect()
+        textpos.centerx = background.get_rect().centerx
+        textpos.centery = background.get_rect().centery
+        if(ImageShowed):
+            backgroundPicture.blit(text, textpos)
+        else:
+            background.blit(text, textpos)
 
     if (Numeral != ""):
-		#print(displaytext)
-		font = pygame.font.Font(None, 800)
-		text = font.render(Numeral, 1, (227, 157, 200))
-		textpos = text.get_rect()
-		textpos.centerx = background.get_rect().centerx
-		textpos.centery = background.get_rect().centery
-		if(ImageShowed):
-			backgroundPicture.blit(text, textpos)
-		else:
-			background.blit(text, textpos)
+        #print(displaytext)
+        font = pygame.font.Font(None, 800)
+        text = font.render(Numeral, 1, (227, 157, 200))
+        textpos = text.get_rect()
+        textpos.centerx = background.get_rect().centerx
+        textpos.centery = background.get_rect().centery
+        if(ImageShowed):
+            backgroundPicture.blit(text, textpos)
+        else:
+            background.blit(text, textpos)
 
     if (CountDownPhoto != ""):
-		#print(displaytext)
-		font = pygame.font.Font(None, 500)
-		text = font.render(CountDownPhoto, 1, (227, 157, 200))
-		textpos = text.get_rect()
-		textpos.centerx = background.get_rect().centerx
-		textpos.centery = background.get_rect().centery
-		if(ImageShowed):
-			backgroundPicture.blit(text, textpos)
-		else:
-			background.blit(text, textpos)
+        #print(displaytext)
+        font = pygame.font.Font(None, 500)
+        text = font.render(CountDownPhoto, 1, (227, 157, 200))
+        textpos = text.get_rect()
+        textpos.centerx = background.get_rect().centerx
+        textpos.centery = background.get_rect().centery
+        if(ImageShowed):
+            backgroundPicture.blit(text, textpos)
+        else:
+            background.blit(text, textpos)
     
     if(ImageShowed == True):
         screenPicture.blit(backgroundPicture, (0, 0))       
@@ -252,22 +252,22 @@ def show_image(image_path):
     pygame.display.flip()
 
 def CapturePicture():
-	global imagecounter
-	global imagefolder
-	global Numeral
-	global Message
-	global screen
-	global background
-	global screenPicture
-	global backgroundPicture
-	global pygame
-	global ImageShowed
-	global CountDownPhoto
+    global imagecounter
+    global imagefolder
+    global Numeral
+    global Message
+    global screen
+    global background
+    global screenPicture
+    global backgroundPicture
+    global pygame
+    global ImageShowed
+    global CountDownPhoto
     global BackgroundColor    
     
     BackgroundColor = ""
     Numeral = ""
-	Message = ""
+    Message = ""
     UpdateDisplay()
     time.sleep(1)
     CountDownPhoto = ""
@@ -279,14 +279,14 @@ def CapturePicture():
     BackgroundColor = "black"
 
     for x in range(3, -1, -1):
-		if x == 0:                        
-			Numeral = ""
-			Message = "PRENEZ LA POSE"
-		else:                        
-			Numeral = str(x)
-			Message = ""                
-		UpdateDisplay()
-		time.sleep(1)
+        if x == 0:                        
+            Numeral = ""
+            Message = "PRENEZ LA POSE"
+        else:                        
+            Numeral = str(x)
+            Message = ""                
+        UpdateDisplay()
+        time.sleep(1)
         BackgroundColor = ""
         Numeral = ""
         Message = ""
@@ -302,91 +302,91 @@ def CapturePicture():
     
     
 def TakePictures():
-	global imagecounter
-	global imagefolder
-	global Numeral
-	global Message
-	global screen
-	global background
-	global pygame
-	global ImageShowed
-	global CountDownPhoto
+    global imagecounter
+    global imagefolder
+    global Numeral
+    global Message
+    global screen
+    global background
+    global pygame
+    global ImageShowed
+    global CountDownPhoto
     global BackgroundColor
     global Printing
     global PhotosPerCart
     global TotalImageCount
 
-	input(pygame.event.get())
-	CountDownPhoto = "1/3"        
-	filename1 = CapturePicture()
+    input(pygame.event.get())
+    CountDownPhoto = "1/3"        
+    filename1 = CapturePicture()
 
-	CountDownPhoto = "2/3"
-	filename2 = CapturePicture()
+    CountDownPhoto = "2/3"
+    filename2 = CapturePicture()
 
-	CountDownPhoto = "3/3"
-	filename3 = CapturePicture()
+    CountDownPhoto = "3/3"
+    filename3 = CapturePicture()
 
-	CountDownPhoto = ""
-	Message = "Attendez svp..."
-	UpdateDisplay()
+    CountDownPhoto = ""
+    Message = "Attendez svp..."
+    UpdateDisplay()
 
-	image1 = PIL.Image.open(filename1)
-	image2 = PIL.Image.open(filename2)
-	image3 = PIL.Image.open(filename3)   
-	TotalImageCount = TotalImageCount + 1
+    image1 = PIL.Image.open(filename1)
+    image2 = PIL.Image.open(filename2)
+    image3 = PIL.Image.open(filename3)   
+    TotalImageCount = TotalImageCount + 1
 
-	bgimage.paste(image1, (625, 30))
-	bgimage.paste(image2, (625, 410))
-	bgimage.paste(image3, (55, 410))
-	# Create the final filename
-	ts = time.time()
-	Final_Image_Name = os.path.join(imagefolder, "Final_" + str(TotalImageCount)+"_"+str(ts) + ".jpg")
-	# Save it to the usb drive
-	bgimage.save(Final_Image_Name)
-	# Save a temp file, its faster to print from the pi than usb
-	bgimage.save('/home/pi/Desktop/tempprint.jpg')
-	ShowPicture('/home/pi/Desktop/tempprint.jpg',3)
-	bgimage2 = bgimage.rotate(90)
-	bgimage2.save('/home/pi/Desktop/tempprint.jpg')
-	ImageShowed = False
-	Message = "Appuyez sur le bouton pour imprimer"
-	UpdateDisplay()
-	time.sleep(1)
-	Message = ""
-	UpdateDisplay()
-	Printing = False
-	WaitForPrintingEvent()
-	Numeral = ""
+    bgimage.paste(image1, (625, 30))
+    bgimage.paste(image2, (625, 410))
+    bgimage.paste(image3, (55, 410))
+    # Create the final filename
+    ts = time.time()
+    Final_Image_Name = os.path.join(imagefolder, "Final_" + str(TotalImageCount)+"_"+str(ts) + ".jpg")
+    # Save it to the usb drive
+    bgimage.save(Final_Image_Name)
+    # Save a temp file, its faster to print from the pi than usb
+    bgimage.save('/home/pi/Desktop/tempprint.jpg')
+    ShowPicture('/home/pi/Desktop/tempprint.jpg',3)
+    bgimage2 = bgimage.rotate(90)
+    bgimage2.save('/home/pi/Desktop/tempprint.jpg')
+    ImageShowed = False
+    Message = "Appuyez sur le bouton pour imprimer"
+    UpdateDisplay()
+    time.sleep(1)
+    Message = ""
+    UpdateDisplay()
+    Printing = False
+    WaitForPrintingEvent()
+    Numeral = ""
     Message = ""
     print(Printing)
         if Printing:
-			if (TotalImageCount <= PhotosPerCart):
-				if os.path.isfile('/home/pi/Desktop/tempprint.jpg'):
-					# Open a connection to cups
-					conn = cups.Connection()
-					# get a list of printers
-					printers = conn.getPrinters()
-					# select printer 0
-					printer_name = printers.keys()[0]
-					Message = "Impression en cours..."
-					UpdateDisplay()
-					time.sleep(1)
-					# print the buffer file
-					printqueuelength = len(conn.getJobs())
-					if printqueuelength > 1:
-						ShowPicture('/home/pi/Desktop/tempprint.jpg',3)
-						conn.enablePrinter(printer_name)
-						Message = "Impression impossible"                
-						UpdateDisplay()
-						time.sleep(1)
-					else:
-						conn.printFile(printer_name, '/home/pi/Desktop/tempprint.jpg', "PhotoBooth", {})
-						time.sleep(40)            
-			else:
-				Message = "Nous vous enverrons vos photos"
-				Numeral = ""
-				UpdateDisplay()
-				time.sleep(1)
+            if (TotalImageCount <= PhotosPerCart):
+                if os.path.isfile('/home/pi/Desktop/tempprint.jpg'):
+                    # Open a connection to cups
+                    conn = cups.Connection()
+                    # get a list of printers
+                    printers = conn.getPrinters()
+                    # select printer 0
+                    printer_name = printers.keys()[0]
+                    Message = "Impression en cours..."
+                    UpdateDisplay()
+                    time.sleep(1)
+                    # print the buffer file
+                    printqueuelength = len(conn.getJobs())
+                    if printqueuelength > 1:
+                        ShowPicture('/home/pi/Desktop/tempprint.jpg',3)
+                        conn.enablePrinter(printer_name)
+                        Message = "Impression impossible"                
+                        UpdateDisplay()
+                        time.sleep(1)
+                    else:
+                        conn.printFile(printer_name, '/home/pi/Desktop/tempprint.jpg', "PhotoBooth", {})
+                        time.sleep(40)            
+            else:
+                Message = "Nous vous enverrons vos photos"
+                Numeral = ""
+                UpdateDisplay()
+                time.sleep(1)
         Message = ""
         Numeral = ""
         ImageShowed = False
