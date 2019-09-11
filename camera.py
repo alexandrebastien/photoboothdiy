@@ -359,39 +359,39 @@ def TakePictures():
     Numeral = ""
     Message = ""
     print(Printing)
-        if Printing:
-            if (TotalImageCount <= PhotosPerCart):
-                if os.path.isfile('/home/pi/Desktop/tempprint.jpg'):
-                    # Open a connection to cups
-                    conn = cups.Connection()
-                    # get a list of printers
-                    printers = conn.getPrinters()
-                    # select printer 0
-                    printer_name = printers.keys()[0]
-                    Message = "Impression en cours..."
-                    UpdateDisplay()
-                    time.sleep(1)
-                    # print the buffer file
-                    printqueuelength = len(conn.getJobs())
-                    if printqueuelength > 1:
-                        ShowPicture('/home/pi/Desktop/tempprint.jpg',3)
-                        conn.enablePrinter(printer_name)
-                        Message = "Impression impossible"                
-                        UpdateDisplay()
-                        time.sleep(1)
-                    else:
-                        conn.printFile(printer_name, '/home/pi/Desktop/tempprint.jpg', "PhotoBooth", {})
-                        time.sleep(40)            
-            else:
-                Message = "Nous vous enverrons vos photos"
-                Numeral = ""
-                UpdateDisplay()
-                time.sleep(1)
-        Message = ""
-        Numeral = ""
-        ImageShowed = False
-        UpdateDisplay()
-        time.sleep(1)
+	if Printing:
+		if (TotalImageCount <= PhotosPerCart):
+			if os.path.isfile('/home/pi/Desktop/tempprint.jpg'):
+				# Open a connection to cups
+				conn = cups.Connection()
+				# get a list of printers
+				printers = conn.getPrinters()
+				# select printer 0
+				printer_name = printers.keys()[0]
+				Message = "Impression en cours..."
+				UpdateDisplay()
+				time.sleep(1)
+				# print the buffer file
+				printqueuelength = len(conn.getJobs())
+				if printqueuelength > 1:
+					ShowPicture('/home/pi/Desktop/tempprint.jpg',3)
+					conn.enablePrinter(printer_name)
+					Message = "Impression impossible"                
+					UpdateDisplay()
+					time.sleep(1)
+				else:
+					conn.printFile(printer_name, '/home/pi/Desktop/tempprint.jpg', "PhotoBooth", {})
+					time.sleep(40)            
+		else:
+			Message = "Nous vous enverrons vos photos"
+			Numeral = ""
+			UpdateDisplay()
+			time.sleep(1)
+	Message = ""
+	Numeral = ""
+	ImageShowed = False
+	UpdateDisplay()
+	time.sleep(1)
 
 def MyCallback(channel):
     global Printing
