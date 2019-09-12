@@ -19,14 +19,11 @@ CountDownPhoto = ""
 CountPhotoOnCart = ""
 SmallMessage = ""  # SmallMessage is a lower banner message
 TotalImageCount = 0  # Counter for Display and to monitor paper usage
-PhotosPerCart = 30  # Selphy takes 16 sheets per tray
 imagecounter = 0
 imagefolder = 'Photos'
 templatePath = os.path.join('Photos', 'Template', "template.png") #Path of template image
 ImageShowed = False
 BUTTON_PIN = 4
-#IMAGE_WIDTH = 558
-#IMAGE_HEIGHT = 374
 IMAGE_WIDTH = 550
 IMAGE_HEIGHT = 360
 
@@ -149,7 +146,7 @@ def DisplayText(fontSize, textToDisplay):
     if (textToDisplay != ""):
         #print(displaytext)
         font = pygame.font.Font(None, fontSize)
-        text = font.render(textToDisplay, 1, (227, 157, 200))
+        text = font.render(textToDisplay, 1, (157, 200, 227))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
@@ -181,7 +178,7 @@ def UpdateDisplay():
     if (Message != ""):
         #print(displaytext)
         font = pygame.font.Font(None, 100)
-        text = font.render(Message, 1, (227, 157, 200))
+        text = font.render(Message, 1, (157, 200, 227))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
@@ -192,8 +189,8 @@ def UpdateDisplay():
 
     if (Numeral != ""):
         #print(displaytext)
-        font = pygame.font.Font(None, 800)
-        text = font.render(Numeral, 1, (227, 157, 200))
+        font = pygame.font.Font(None, 500)
+        text = font.render(Numeral, 1, (157, 200, 227))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
@@ -204,8 +201,8 @@ def UpdateDisplay():
 
     if (CountDownPhoto != ""):
         #print(displaytext)
-        font = pygame.font.Font(None, 500)
-        text = font.render(CountDownPhoto, 1, (227, 157, 200))
+        font = pygame.font.Font(None, 300)
+        text = font.render(CountDownPhoto, 1, (157, 200, 227))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
@@ -310,7 +307,6 @@ def TakePictures():
     global ImageShowed
     global CountDownPhoto
     global BackgroundColor
-    global PhotosPerCart
     global TotalImageCount
 
     input(pygame.event.get())
