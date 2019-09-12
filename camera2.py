@@ -4,6 +4,7 @@ import time
 import os
 import PIL.Image
 import RPi.GPIO as GPIO
+import math
 
 from threading import Thread
 from pygame.locals import *
@@ -50,7 +51,8 @@ transfrom_y = infoObject.current_h # how high to scale the jpg when replaying
 
 camera = picamera.PiCamera()
 # Initialise the camera object
-camera.resolution = (infoObject.current_w, infoObject.current_h)
+HRES = 1640; VRES = 1232
+camera.resolution = (HRES, VRES)
 camera.rotation              = 0
 camera.hflip                 = True
 camera.vflip                 = False
@@ -330,10 +332,11 @@ def TakePictures():
     image4 = PIL.Image.open(filename4) 
     TotalImageCount = TotalImageCount + 1
 
-    bgimage.paste(image1, (30, 30))
-    bgimage.paste(image2, (3340, 30))
-    bgimage.paste(image3, (30, 2524))
-    bgimage.paste(image4, (3340, 2524))
+    SPC = math.floor(HRES*0.03)
+    bgimage.paste(image1, (SPC, SPC))
+    bgimage.paste(image2, (HRES+2*SPC, SPC))
+    bgimage.paste(image3, (SPC, VRES+2*SPC))
+    bgimage.paste(image4, (HRES+2*SPC, VRES+2*SPC))
 
     # Create the final filename
     ts = time.time()
