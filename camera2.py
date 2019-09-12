@@ -28,7 +28,8 @@ BUTTON_PIN = 4
 
 
 # Load the background template
-bgimage = PIL.Image.open(templatePath)
+HRES = 1640; VRES = 1232; SPC = math.floor(HRES*0.03)
+bgimage = Image.new('RGB', (2*HRES+3*SPC, 2*VRES+3*SPC), (255, 255, 255))
 
 #Setup GPIO
 GPIO.setmode(GPIO.BCM)
@@ -51,7 +52,6 @@ transfrom_y = infoObject.current_h # how high to scale the jpg when replaying
 
 camera = picamera.PiCamera()
 # Initialise the camera object
-HRES = 1640; VRES = 1232
 camera.resolution = (HRES, VRES)
 camera.rotation              = 0
 camera.hflip                 = True
@@ -332,7 +332,6 @@ def TakePictures():
     image4 = PIL.Image.open(filename4) 
     TotalImageCount = TotalImageCount + 1
 
-    SPC = math.floor(HRES*0.03)
     bgimage.paste(image1, (SPC, SPC))
     bgimage.paste(image2, (HRES+2*SPC, SPC))
     bgimage.paste(image3, (SPC, VRES+2*SPC))
