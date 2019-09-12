@@ -146,7 +146,7 @@ def DisplayText(fontSize, textToDisplay):
     if (textToDisplay != ""):
         #print(displaytext)
         font = pygame.font.Font(None, fontSize)
-        text = font.render(textToDisplay, 1, (157, 200, 227))
+        text = font.render(textToDisplay, 1, (71, 188, 117))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
@@ -178,7 +178,7 @@ def UpdateDisplay():
     if (Message != ""):
         #print(displaytext)
         font = pygame.font.Font(None, 100)
-        text = font.render(Message, 1, (157, 200, 227))
+        text = font.render(Message, 1, (71, 188, 117))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
@@ -190,7 +190,7 @@ def UpdateDisplay():
     if (Numeral != ""):
         #print(displaytext)
         font = pygame.font.Font(None, 500)
-        text = font.render(Numeral, 1, (157, 200, 227))
+        text = font.render(Numeral, 1, (71, 188, 117))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
@@ -202,7 +202,7 @@ def UpdateDisplay():
     if (CountDownPhoto != ""):
         #print(displaytext)
         font = pygame.font.Font(None, 300)
-        text = font.render(CountDownPhoto, 1, (157, 200, 227))
+        text = font.render(CountDownPhoto, 1, (71, 188, 117))
         textpos = text.get_rect()
         textpos.centerx = background.get_rect().centerx
         textpos.centery = background.get_rect().centery
