@@ -22,12 +22,11 @@ SmallMessage = ""  # SmallMessage is a lower banner message
 TotalImageCount = 0  # Counter for Display and to monitor paper usage
 imagecounter = 0
 imagefolder = 'Photos'
-templatePath = os.path.join('Photos', 'Template', "template.png") #Path of template image
 ImageShowed = False
 BUTTON_PIN = 4
 
 
-# Load the background template
+# Create the background template
 HRES = 1640; VRES = 1232; SPC = math.floor(HRES*0.03)
 bgimage = Image.new('RGB', (2*HRES+3*SPC, 2*VRES+3*SPC), (255, 255, 255))
 
